@@ -13,12 +13,12 @@ sudo locale-gen fr_CA.utf8
 
 # 7.1
 # FPM
-sudo sed '/xdebug.remote_connect_back/ d' /etc/php/7.1/fpm/conf.d/20-xdebug.ini 		#delete 
+sudo sed -i '/xdebug.remote_connect_back/ d' /etc/php/7.1/fpm/conf.d/20-xdebug.ini 		#delete 
 sudo sed -i '$s/$/\nxdebug.remote_host = 192.168.10.1/' /etc/php/7.1/fpm/conf.d/20-xdebug.ini	#insert
 sudo sed -i '$s/$/\nxdebug.remote_autostart=1/' /etc/php/7.1/fpm/conf.d/20-xdebug.ini		#insert
 
 # CLI
-sudo sed '/xdebug.remote_connect_back/ d' /etc/php/7.1/fpm/conf.d/20-xdebug.ini                 #delete
+sudo sed -i '/xdebug.remote_connect_back/ d' /etc/php/7.1/fpm/conf.d/20-xdebug.ini                 #delete
 sudo sed -i '$s/$/\nxdebug.remote_host = 192.168.10.1/' /etc/php/7.1/cli/conf.d/20-xdebug.ini 	#insert
 sudo sed -i '$s/$/\nxdebug.remote_autostart=1/' /etc/php/7.1/cli/conf.d/20-xdebug.ini		#insert
 
@@ -26,12 +26,12 @@ sudo service php7.1-fpm restart
 
 # 7.2
 # FPM
-sudo sed '/xdebug.remote_connect_back/ d' /etc/php/7.2/fpm/conf.d/20-xdebug.ini                 #delete
+sudo sed -i '/xdebug.remote_connect_back/ d' /etc/php/7.2/fpm/conf.d/20-xdebug.ini                 #delete
 sudo sed -i '$s/$/\nxdebug.remote_host = 192.168.10.1/' /etc/php/7.2/fpm/conf.d/20-xdebug.ini  	#insert
 sudo sed -i '$s/$/\nxdebug.remote_autostart=1/' /etc/php/7.2/fpm/conf.d/20-xdebug.ini		#insert
 
 # CLI
-sudo sed '/xdebug.remote_connect_back/ d' /etc/php/7.2/fpm/conf.d/20-xdebug.ini                 #delete
+sudo sed -i '/xdebug.remote_connect_back/ d' /etc/php/7.2/fpm/conf.d/20-xdebug.ini                 #delete
 sudo sed -i '$s/$/\nxdebug.remote_host = 192.168.10.1/' /etc/php/7.2/cli/conf.d/20-xdebug.ini 	#insert
 sudo sed -i '$s/$/\nxdebug.remote_autostart=1/' /etc/php/7.2/cli/conf.d/20-xdebug.ini		#insert
 
@@ -39,11 +39,11 @@ sudo service php7.2-fpm restart
 
 # 7.3
 # FPM
-sudo sed '/xdebug.remote_connect_back/ d' /etc/php/7.3/fpm/conf.d/20-xdebug.ini                 #delete
+sudo sed -i '/xdebug.remote_connect_back/ d' /etc/php/7.3/fpm/conf.d/20-xdebug.ini                 #delete
 sudo sed -i '$s/$/\nxdebug.remote_host = 192.168.10.1/' /etc/php/7.3/fpm/conf.d/20-xdebug.ini 	#insert
 sudo sed -i '$s/$/\nxdebug.remote_autostart=1/' /etc/php/7.3/fpm/conf.d/20-xdebug.ini		#insert
 # CLI
-sudo sed '/xdebug.remote_connect_back/ d' /etc/php/7.3/fpm/conf.d/20-xdebug.ini                 #delete
+sudo sed -i '/xdebug.remote_connect_back/ d' /etc/php/7.3/fpm/conf.d/20-xdebug.ini                 #delete
 sudo sed -i '$s/$/\nxdebug.remote_host = 192.168.10.1/' /etc/php/7.3/cli/conf.d/20-xdebug.ini	#insert
 sudo sed -i '$s/$/\nxdebug.remote_autostart=1/' /etc/php/7.3/cli/conf.d/20-xdebug.ini		#insert
 
