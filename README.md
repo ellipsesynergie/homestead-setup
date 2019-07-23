@@ -8,7 +8,7 @@ git checkout release
 bash init.sh
 
 ### Setup homestead
-1. Copy lines inside commands.txt and insert them into after.sh in Homestead directory.
+1. Copy lines inside commands.txt and insert them into after.sh located in Homestead directory.
 2. Run vagrant provision
 3. Delete added lines in after.sh
-4. Add your configuration in homestead.yaml (don't former MariaDB)
+4. Add your configuration in homestead.yaml (don't forget MariaDB)
