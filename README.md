@@ -2,9 +2,9 @@
 Fastest way to setup homestead
 
 ### Delete folder with previous VM and run those commands (found in https://laravel.com/docs/5.8/homestead)
-git clone https://github.com/laravel/homestead.git ~/Homestead
-cd ~/Homestead
-git checkout release
+git clone https://github.com/laravel/homestead.git ~/Homestead &&
+cd ~/Homestead &&
+git checkout release &&
 bash init.sh
 
 ### Setup homestead
