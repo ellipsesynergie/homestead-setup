@@ -33,18 +33,24 @@ sudo locale-gen fr_CA.utf8
 phpVDirs=/etc/php/*
 for phpVDir in $phpVDirs
 do
+
         # Keep only php version and cut directory
-        phpV=$(echo $phpVDir| cut -d '/' -f 4) 
-        
-        # Create xdebug cli
-        sudo phpenmod -v $phpV xdebug
+        phpV=$(echo $phpVDir| cut -d '/' -f 4)
 
-        # This will add and deletes the following lines in the simlink that link cli and fpm 20-xdebug.ini
-        sudo sed -i '/xdebug.remote_connect_back/ d' /etc/php/$phpV/mods-available/xdebug.ini                 #delete
-        sudo sed -i '$s/$/\nxdebug.remote_host = 192.168.10.1/' /etc/php/$phpV/mods-available/xdebug.ini      #insert
-        sudo sed -i '$s/$/\nxdebug.remote_autostart=1/' /etc/php/$phpV/mods-available/xdebug.ini              #insert
+        # condition to make sur it doesn't duplicate
+        isInFile=$(cat /etc/php/$phpV/fpm/conf.d/20-xdebug.ini | grep -c "xdebug.remote_host")
 
-        sudo service php$phpV-fpm restart
+        if [ $isInFile -eq 0 ]; then
+                 # Create xdebug cli
+                 sudo phpenmod -v $phpV xdebug
+
+                # This will add and deletes the following lines in the simlink that link cli and fpm 20-xdebug.ini
+                sudo sed -i '/xdebug.remote_connect_back/ d' /etc/php/$phpV/mods-available/xdebug.ini                 #delete
+                sudo sed -i '$s/$/\nxdebug.remote_host = 192.168.10.1/' /etc/php/$phpV/mods-available/xdebug.ini      #insert
+                sudo sed -i '$s/$/\nxdebug.remote_autostart=1/' /etc/php/$phpV/mods-available/xdebug.ini              #insert
+
+                sudo service php$phpV-fpm restart
+        fi
 done
 
 sudo service nginx restart
