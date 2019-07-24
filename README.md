@@ -3,7 +3,7 @@ Fastest way to setup homestead
 
 ### First step (creation)
 1. Run vagrant destroy
-2. If you deleted the homestead folder run following commands (found in https://laravel.com/docs/5.8/homestead)
+2. If you've deleted the homestead folder run following commands (found in https://laravel.com/docs/5.8/homestead)
 
 ```bash
 git clone https://github.com/laravel/homestead.git ~/Homestead &&
