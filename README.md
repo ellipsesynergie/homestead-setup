@@ -58,5 +58,4 @@ sudo service nginx restart
 
 2. Run vagrant up
 3. Run vagrant provision
-4. Delete added lines in after.sh
-5. Add your configuration in homestead.yaml (don't forget MariaDB)
+4. Add your configuration in homestead.yaml (don't forget MariaDB)
