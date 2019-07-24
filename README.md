@@ -2,8 +2,8 @@
 Fastest way to setup homestead
 
 ### First step (creation)
-1. Delete folder with previous VM 
-2. Run following commands (found in https://laravel.com/docs/5.8/homestead)
+1. Run vagrant destroy
+2. If you deleted the homestead folder run following commands (found in https://laravel.com/docs/5.8/homestead)
 
 ```bash
 git clone https://github.com/laravel/homestead.git ~/Homestead &&
@@ -56,6 +56,6 @@ done
 sudo service nginx restart
 ```
 
-2. Run vagrant up
-3. Run vagrant provision
-4. Add your configuration in homestead.yaml (don't forget MariaDB)
+3. Run vagrant up
+4. Run vagrant provision
+5. Add your configuration in homestead.yaml (don't forget MariaDB)
