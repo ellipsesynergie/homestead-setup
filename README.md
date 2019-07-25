@@ -58,4 +58,11 @@ sudo service nginx restart
 
 3. Run vagrant up
 4. Run vagrant provision
-5. Add your configuration in homestead.yaml (don't forget MariaDB)
+5 With Homestead > version 8.0.0, you need dans change homestead.yaml mariaDB setup. It is now like this format: 
+
+```bash
+
+features:
+    - mariadb: true
+    
+```
