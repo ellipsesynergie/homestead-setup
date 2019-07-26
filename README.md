@@ -66,3 +66,9 @@ features:
     - mariadb: true
     
 ```
+
+6. For those who quand Oh my zsh
+
+```bash
+// sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+```
